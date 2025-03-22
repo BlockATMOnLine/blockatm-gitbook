@@ -4,8 +4,8 @@
 
 ## 快速集成收银台
 
-* [概述](getting-started/widget-start)
-* [接入wedget](getting-started/widget.md)
+* [概述](getting-started/widget.md)
+* [接入wedget](getting-started/widget-start.md)
 
 ## Basics
 
