@@ -1,13 +1,13 @@
 # Table of contents
 
-* [概览](README.md)
+* [Overview](README.md)
 
-## 集成收银台
+##  Integrations
 
-* [概述](ji-cheng-shou-yin-tai/widget.md)
-* [轻松接入](ji-cheng-shou-yin-tai/widget-start.md)
-* [参数签名](ji-cheng-shou-yin-tai/can-shu-qian-ming.md)
-* [参数定义](ji-cheng-shou-yin-tai/widget-param.md)
+* [Overview](ji-cheng-shou-yin-tai/widget-Overview)
+* [Quick Start](ji-cheng-shou-yin-tai/widget-start.md)
+* [Url Signing](ji-cheng-shou-yin-tai/can-shu-qian-ming.md)
+* [Widget Param](ji-cheng-shou-yin-tai/widget-param.md)
 
 ## Basics
 
