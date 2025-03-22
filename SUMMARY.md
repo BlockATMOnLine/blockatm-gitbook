@@ -2,10 +2,11 @@
 
 * [概览](README.md)
 
-## 快速集成收银台
+## 集成收银台
 
-* [概述](getting-started/widget.md)
-* [接入wedget](getting-started/widget-start.md)
+* [概述](ji-cheng-shou-yin-tai/widget.md)
+* [轻松接入](ji-cheng-shou-yin-tai/widget-start.md)
+* [参数签名](ji-cheng-shou-yin-tai/can-shu-qian-ming.md)
 
 ## Basics
 
