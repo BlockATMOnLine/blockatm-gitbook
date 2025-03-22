@@ -21,9 +21,14 @@ Each Webhook request includes a BlockATM-Event header to identify the event type
 
 - Payout: A payout was triggered by the payout contract.
 
-## 3.Data Reception
+### 3.Data Reception
 You need to configure an endpoint on your server to receive and process these events, updating your system accordingly.
 
+
+## Secure your Webhook
+
+You may validate incoming requests to ensure they are coming from a trusted source.
+Visit our webhooks signature for more information. This is a recommended best practice.
 
 ## Important Notes
 - Ensure your Webhook URL uses HTTPS to guarantee data security.

@@ -11,9 +11,9 @@
 
 ## Webhook 
 
-* [Overview](webhook/overwiew.md)
+* [Overview](webhook/overview.md)
 * [Payment Event](webhook/PaymentEvent.md)
 * [Payout Event](webhook/PayoutEvent.md)
-* [Interactive blocks](basics/interactive-blocks.md)
+* [Request signing](webhook/signing.md)
 * [OpenAPI](basics/openapi.md)
 * [Integrations](basics/integrations.md)
