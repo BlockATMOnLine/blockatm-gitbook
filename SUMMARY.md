@@ -2,10 +2,10 @@
 
 * [概览](README.md)
 
-## Getting Started
+## 快速集成收银台
 
-* [Quickstart](getting-started/quickstart.md)
-* [Publish your docs](getting-started/publish-your-docs.md)
+* [概述](getting-started/widget-start)
+* [接入wedget](getting-started/widget.md)
 
 ## Basics
 
