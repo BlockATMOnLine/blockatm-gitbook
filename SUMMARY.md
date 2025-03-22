@@ -7,6 +7,7 @@
 * [概述](ji-cheng-shou-yin-tai/widget.md)
 * [轻松接入](ji-cheng-shou-yin-tai/widget-start.md)
 * [参数签名](ji-cheng-shou-yin-tai/can-shu-qian-ming.md)
+* [参数定义](ji-cheng-shou-yin-tai/widget-param.md)
 
 ## Basics
 
