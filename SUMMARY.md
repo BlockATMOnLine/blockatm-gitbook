@@ -36,3 +36,5 @@
 
 * [Network And Coin](help/network-and-coin.md)
 * [Obtain  Test Coins](help/obtain-test-coins.md)
+* [Supported Wallet](help/supported-wallet.md)
+* [Contract Address](help/contract-address.md)
