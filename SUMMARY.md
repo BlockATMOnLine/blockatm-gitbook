@@ -2,7 +2,7 @@
 
 * [Overview](README.md)
 
-## Cashier Integration
+## Cashier 
 
 * [Overview](integrations/overview.md)
 * [Quick Start](cashier/widget-start.md)
