@@ -5,9 +5,9 @@
 ## Cashier Integration
 
 * [Overview](integrations/overview.md)
-* [Quick Start](ji-cheng-shou-yin-tai/widget-start.md)
-* [Url Signing](ji-cheng-shou-yin-tai/can-shu-qian-ming.md)
-* [Widget Param](ji-cheng-shou-yin-tai/widget-param.md)
+* [Quick Start](cashier/widget-start.md)
+* [Url Signing](cashier/can-shu-qian-ming.md)
+* [Widget Param](cashier/widget-param.md)
 
 ## Webhook 
 
@@ -15,5 +15,8 @@
 * [Payment Event](webhook/PaymentEvent.md)
 * [Payout Event](webhook/PayoutEvent.md)
 * [Request signing](webhook/signing.md)
+
+
+## Open API
 * [OpenAPI](basics/openapi.md)
 * [Integrations](basics/integrations.md)

@@ -1,5 +1,5 @@
 ---
-icon: cubes
+icon: plug-circle-plus
 ---
 
 # Payment Event
