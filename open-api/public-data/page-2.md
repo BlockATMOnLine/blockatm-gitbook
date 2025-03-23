@@ -1,6 +1,6 @@
 # Network List
 
-{% openapi src="http://127.0.0.1:4523/export/openapi/4?version=3.0" path="/admin/api/pub/allNetworks" method="get" %}
-[http://127.0.0.1:4523/export/openapi/4?version=3.0](http://127.0.0.1:4523/export/openapi/4?version=3.0)
+{% openapi src="../../.gitbook/assets/BlockATM-B2B.openapi.json" path="/admin/api/pub/allNetworks" method="get" %}
+[BlockATM-B2B.openapi.json](../../.gitbook/assets/BlockATM-B2B.openapi.json)
 {% endopenapi %}
 
