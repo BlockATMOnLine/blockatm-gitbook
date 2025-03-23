@@ -32,9 +32,9 @@
   * [Create Payout Order](open-api/payout-data/create-payout-order.md)
   * [Query Payout Order](open-api/payout-data/query-payout-order.md)
 
-## Help
+## resources
 
-* [Network And Coin](help/network-and-coin.md)
-* [Obtain  Test Coins](help/obtain-test-coins.md)
-* [Supported Wallet](help/supported-wallet.md)
-* [Contract Address](help/contract-address.md)
+* [Network And Coin](resources/network-and-coin.md)
+* [Obtain  Test Coins](resources/obtain-test-coins.md)
+* [Supported Wallet](resources/supported-wallet.md)
+* [Contract Address](resources/contract-address.md)
