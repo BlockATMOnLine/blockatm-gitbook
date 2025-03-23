@@ -2,7 +2,7 @@
 
 * [Overview](README.md)
 
-## Cashier 
+## Cashier
 
 * [Overview](integrations/overview.md)
 * [Quick Start](cashier/widget-start.md)
@@ -25,7 +25,8 @@
   * [Request Limit](open-api/openapi/request-limit.md)
   * [Error Code](open-api/openapi/error-code.md)
 * [Public Data](open-api/public-data/README.md)
-  * [Page 2](open-api/public-data/page-2.md)
+  * [Network List](open-api/public-data/page-2.md)
+  * [Coin List](open-api/public-data/coin-list.md)
 * [Payment Data](open-api/payment-data/README.md)
   * [Query Payment Order](open-api/payment-data/query-payment-order.md)
 * [Payout Data](open-api/payout-data/README.md)
@@ -35,6 +36,6 @@
 ## resources
 
 * [Network And Coin](resources/network-and-coin.md)
-* [Obtain  Test Coins](resources/obtain-test-coins.md)
+* [Obtain Test Coins](resources/obtain-test-coins.md)
 * [Supported Wallet](resources/supported-wallet.md)
 * [Contract Address](resources/contract-address.md)
