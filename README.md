@@ -1,5 +1,5 @@
 ---
-icon: hand-wave
+icon: book-open
 cover: https://gitbookio.github.io/onboarding-template-images/header.png
 coverY: 0
 layout:
@@ -18,34 +18,36 @@ layout:
     visible: true
 ---
 
-# 概览
+# Overview
 
-### 欢迎
+### Welcome
 
-Welcome to BlockATM API Documentation! BlockATM offers a set of powerful and flexible APIs that allow developers to integrate seamless cryptocurrency payment services into their applications.![img\_3.png](.gitbook/assets/img_3.png)
+Welcome to BlockATM API Documentation! BlockATM offers a set of powerful and flexible APIs that allow developers to integrate seamless cryptocurrency payment services into their applications.
 
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### About BlockATM
 
-![img\_2.png](.gitbook/assets/img_2.png)\
-BlockATM is a decentralized payment solution for crypto, aimed at providing a secure, convenient, and trustworthy payment platform. With our use of Web3 technology and smart contracts, we manage every transaction to ensure its authenticity. Our mission is to leverage the benefits of decentralization, such as tamper-proof and trustworthy systems, to ensure the safety of your assets.
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+\
+BlockATM is a decentralized payment solution for crypto, aimed at providing a secure, convenient, and trustworthy payment platform. With our use of Web3 technology and smart contracts, we manage every transaction to ensure its authenticity. Our mission is to leverage the benefits of decentralization, such as tamper-proof and trustworthy systems, to ensure the safety of your assets.\
 We believe that trust can be established without the need for verification, and thus, BlockATM aims to make crypto payments more secure and reliable through decentralized solutions.
 
 ### Our Vision
 
-![img.png](.gitbook/assets/img.png)\
-At BlockATM, we are committed to leveraging the power of blockchain technology to create a more efficient and transparent payment ecosystem for businesses.
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+\
+At BlockATM, we are committed to leveraging the power of blockchain technology to create a more efficient and transparent payment ecosystem for businesses.\
 Our solutions will enable businesses to seamlessly integrate crypto into their existing payment infrastructure, while also providing robust security features to protect against fraud and hacking.
-###  Key Features
+
+### Key Features
 
 ![img\_1.png](.gitbook/assets/img_1.png)
 
 * Smart contracts are fully independently deployed
-
 * 100% asset security
-
 * Fully decentralized , not reliant on anyone including BlockATM
-
 * All fees are written into smart contracts, ensuring transparency
-
 * Easy and simple payment gateway integration with support for customization

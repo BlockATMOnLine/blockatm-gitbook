@@ -1,6 +1,6 @@
 ---
 description: 只需要三步，轻松完成集成开发
-icon: bullseye-arrow
+icon: box-open
 ---
 
 # Quick Start
@@ -9,24 +9,16 @@ icon: bullseye-arrow
 
 Add the SDK as a script to your HTML file.
 
-
 ```javascript
 <script src="https://cashier.blockatm.net/libs/BlockATM.umd.js"></script>
 
 ```
 
-
-
 Once you've included this script, you're ready to initialize the Web SDK and start integrating with our suite of cryptocurrency payment solutions.
-
-
 
 2. **Initialize**
 
-
-
 Initialize the SDK in your application with the flow, variant,lang and any parameters related to deposit cryptocurrency.
-
 
 ```javascript
 window.BlockATM.init(dom, {
@@ -43,11 +35,7 @@ window.BlockATM.init(dom, {
 })
 ```
 
-
-
 #### 3. Signing
 
-If you're using the orderNo or custNo query param, in the payment flows, 
+If you're using the orderNo or custNo query param, in the payment flows,\
 you need to sign your widget URL before you can display the widget. Learn more about URL signing.
-
-
