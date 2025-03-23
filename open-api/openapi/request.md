@@ -24,6 +24,10 @@ See the interface description
 
 4.Response **Parameters**
 
+
+
+HTTP response status code
+
 | Parameter | Type     | Description                                                     |
 | --------- | -------- | --------------------------------------------------------------- |
 | code      | String   | system general return code. 200 -success, other exceptions      |

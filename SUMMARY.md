@@ -22,6 +22,7 @@
   * [IIIustrate](open-api/openapi/iiiustrate.md)
   * [Request Signing](open-api/openapi/request-signing.md)
   * [Request](open-api/openapi/request.md)
+  * [Request Limit](open-api/openapi/request-limit.md)
 * [Public Data](open-api/public-data/README.md)
   * [Page 2](open-api/public-data/page-2.md)
 * [Payment Data](open-api/payment-data/README.md)
