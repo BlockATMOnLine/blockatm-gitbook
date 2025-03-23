@@ -1,6 +1,6 @@
 ---
 description: Protecting your sensitive data
-icon: pen-field
+icon: key-skeleton-left-right
 ---
 
 # Request signing

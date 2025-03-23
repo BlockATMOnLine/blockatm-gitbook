@@ -31,3 +31,8 @@
 * [Payout Data](open-api/payout-data/README.md)
   * [Create Payout Order](open-api/payout-data/create-payout-order.md)
   * [Query Payout Order](open-api/payout-data/query-payout-order.md)
+
+## Help
+
+* [Network And Coin](help/network-and-coin.md)
+* [Obtain  Test Coins](help/obtain-test-coins.md)
