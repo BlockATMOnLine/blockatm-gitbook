@@ -1,11 +1,11 @@
 ---
-description: 只需要三步，轻松完成集成开发
+description: Just three  steps to  complete the integration .
 icon: box-open
 ---
 
 # Quick Start
 
-1. **引入SDK**
+### 1. import
 
 Add the SDK as a script to your HTML file.
 
@@ -16,7 +16,7 @@ Add the SDK as a script to your HTML file.
 
 Once you've included this script, you're ready to initialize the Web SDK and start integrating with our suite of cryptocurrency payment solutions.
 
-2. **Initialize**
+### 2. Initialize
 
 Initialize the SDK in your application with the flow, variant,lang and any parameters related to deposit cryptocurrency.
 
