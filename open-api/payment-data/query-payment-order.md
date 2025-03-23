@@ -2,7 +2,7 @@
 
 
 
-{% openapi src="http://127.0.0.1:4523/export/openapi/3?version=3.1" path="/order/api/payment/list" method="post" %}
-[http://127.0.0.1:4523/export/openapi/3?version=3.1](http://127.0.0.1:4523/export/openapi/3?version=3.1)
+{% openapi src="../../.gitbook/assets/BlockATM-B2B.openapi.json" path="/order/api/payment/list" method="post" %}
+[BlockATM-B2B.openapi.json](../../.gitbook/assets/BlockATM-B2B.openapi.json)
 {% endopenapi %}
 
