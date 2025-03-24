@@ -14,7 +14,7 @@
 * [Overview](webhook/overview.md)
 * [Payment Event](webhook/PaymentEvent.md)
 * [Payout Event](webhook/PayoutEvent.md)
-* [Request signing](webhook/signing.md)
+* [Request Signing](webhook/signing.md)
 
 ## Open API
 
