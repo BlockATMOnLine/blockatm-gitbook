@@ -7,30 +7,30 @@
   },
   "tags": [
     {
-      "name": "创建代付订单入口"
+      "name": "Payout Order Entry"
     },
     {
-      "name": "收款订单相关"
+      "name": "Payment Order Management"
     },
     {
-      "name": "配置相关接口"
+      "name": "Configuration APIs"
     }
   ],
   "paths": {
     "/order/api/payout/detail": {
       "get": {
-        "summary": "根据业务订单号获取订单详情-V5.0",
+        "summary": "Get order details by business order number-V5.0",
         "deprecated": false,
         "description": "",
         "operationId": "detailUsingGET_1",
         "tags": [
-          "创建代付订单入口"
+          "Payout Order Entry"
         ],
         "parameters": [
           {
             "name": "bizOrderNo",
             "in": "query",
-            "description": "业务订单号",
+            "description": "Business order number",
             "required": true,
             "schema": {
               "type": "string"
@@ -43,7 +43,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseDTO%C2%ABApiPayoutOrderVO%C2%BB"
+                  "$ref": "#/components/schemas/ResponseDTO%C2%ABPayoutOrderApiDTO%C2%BB"
                 }
               }
             },
@@ -55,12 +55,12 @@
     },
     "/order/api/payout/order": {
       "post": {
-        "summary": "创建代付订单-V5.0",
+        "summary": "Create payout order-V5.0",
         "deprecated": false,
         "description": "",
-        "operationId": "apiOrderUsingPOST_4",
+        "operationId": "apiOrderUsingPOST_2",
         "tags": [
-          "创建代付订单入口"
+          "Payout Order Entry"
         ],
         "parameters": [],
         "requestBody": {
@@ -89,33 +89,60 @@
         "security": []
       }
     },
-    "/order/api/payment/list": {
-      "post": {
-        "summary": "查询收款订单记录-V5.0",
+    "/order/api/payorder/list": {
+      "get": {
+        "summary": "Query payment order records-V5.0",
         "deprecated": false,
         "description": "",
-        "operationId": "apiOrderUsingPOST_3",
+        "operationId": "apiOrderUsingGET_1",
         "tags": [
-          "收款订单相关"
+          "Payment Order Management"
         ],
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PayOrderApiSearchDTO"
-              },
-              "example": ""
+        "parameters": [
+          {
+            "name": "orderNo",
+            "in": "query",
+            "description": "Business order number",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chainId",
+            "in": "query",
+            "description": "Network ID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "custNo",
+            "in": "query",
+            "description": "Customer number",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "Payment currency",
+            "required": false,
+            "schema": {
+              "type": "string"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResponseDTO%C2%ABList%C2%ABPayOrderDataDTO%C2%BB%C2%BB"
+                  "$ref": "#/components/schemas/ResponseDTO%C2%ABList%C2%ABPayOrderApiDTO%C2%BB%C2%BB"
                 }
               }
             },
@@ -127,12 +154,12 @@
     },
     "/admin/api/pub/allNetworks": {
       "get": {
-        "summary": "获取所有网络配置-V5.0",
+        "summary": "Get all network configurations-V5.0",
         "deprecated": false,
         "description": "",
         "operationId": "allNetworkUsingGET_5",
         "tags": [
-          "配置相关接口"
+          "Configuration APIs"
         ],
         "parameters": [],
         "responses": {
@@ -151,14 +178,40 @@
         "security": []
       }
     },
+    "/admin/api/pub/cashier/info": {
+      "get": {
+        "summary": "Get cashier configuration-V5.0",
+        "deprecated": false,
+        "description": "",
+        "operationId": "infoUsingGET_4",
+        "tags": [
+          "Configuration APIs"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDTO%C2%ABApiCashierDetailVO%C2%BB"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
     "/admin/api/pub/symbolList": {
       "get": {
-        "summary": "获取币种列表-V5.0",
+        "summary": "Get currency list-V5.0",
         "deprecated": false,
         "description": "",
         "operationId": "symbolListUsingGET_4",
         "tags": [
-          "配置相关接口"
+          "Configuration APIs"
         ],
         "parameters": [
           {
@@ -173,7 +226,7 @@
           {
             "name": "symbol",
             "in": "query",
-            "description": "币种code",
+            "description": "Currency code",
             "required": false,
             "schema": {
               "type": "string"
@@ -206,43 +259,37 @@
           "bizOrderNo",
           "chainId",
           "custNo",
-          "merchantId",
           "symbol",
           "toAddress"
         ],
         "properties": {
           "amount": {
             "type": "number",
-            "description": "金额"
+            "description": "Amount"
           },
           "bizOrderNo": {
             "type": "string",
-            "description": "业务订单ID"
+            "description": "Business order ID"
           },
           "chainId": {
             "type": "string",
-            "description": "链ID"
+            "description": "Chain ID"
           },
           "custNo": {
             "type": "string",
-            "description": "客户ID"
-          },
-          "merchantId": {
-            "type": "integer",
-            "format": "int64",
-            "description": "商户ID"
+            "description": "Customer ID"
           },
           "remark": {
             "type": "string",
-            "description": "备注"
+            "description": "Remark"
           },
           "symbol": {
             "type": "string",
-            "description": "币种"
+            "description": "Currency"
           },
           "toAddress": {
             "type": "string",
-            "description": "接收地址"
+            "description": "Receiving address"
           }
         }
       },
@@ -251,7 +298,7 @@
         "properties": {
           "addressType": {
             "type": "string",
-            "description": "地址格式"
+            "description": "Address format"
           },
           "chainId": {
             "type": "string",
@@ -260,86 +307,82 @@
           "confirm": {
             "type": "integer",
             "format": "int32",
-            "description": "区块确认次数"
+            "description": "Block confirmation count"
           },
           "explorer": {
             "type": "string",
-            "description": "区块浏览器地址"
+            "description": "Block explorer URL"
           },
           "name": {
             "type": "string",
-            "description": "网络名称"
+            "description": "Network name"
           },
           "network": {
             "type": "string",
-            "description": "网络code"
+            "description": "Network code"
           },
           "testNet": {
             "type": "boolean",
-            "description": "是否为测试网络",
+            "description": "Whether it's a test network",
             "examples": [
               false
             ]
           }
         }
       },
-      "ApiPayoutOrderVO": {
+      "ApiCashierDetailVO": {
         "type": "object",
         "properties": {
-          "amount": {
-            "type": "number",
-            "description": "订单金额"
-          },
-          "bizOrderNo": {
+          "logo": {
             "type": "string",
-            "description": "业务订单号"
+            "description": "Business logo"
           },
-          "blockTime": {
+          "merchantId": {
             "type": "integer",
             "format": "int64",
-            "description": "链上区块时间"
+            "description": "Merchant ID"
           },
-          "custNo": {
+          "name": {
             "type": "string",
-            "description": "用户编号"
+            "description": "Name"
           },
-          "fee": {
-            "type": "number",
-            "description": "手续费"
+          "networkDetail": {
+            "type": "object",
+            "description": "Payment networks, key=chain ID",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/NetworkDetail"
+              }
+            },
+            "properties": {}
           },
-          "gasAmount": {
-            "type": "number",
-            "description": "网络费"
+          "payQr": {
+            "type": "integer",
+            "format": "int32",
+            "description": "QR code transfer enabled (1=enabled)"
+          },
+          "payWallet": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Wallet connection payment enabled (1=enabled)"
+          }
+        }
+      },
+      "NetworkDetail": {
+        "type": "object",
+        "properties": {
+          "chainId": {
+            "type": "string",
+            "description": "Chain ID"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency"
           },
           "network": {
             "type": "string",
-            "description": "网络"
-          },
-          "payType": {
-            "type": "integer",
-            "format": "int32",
-            "description": "支付方式(1.合约支付 2连接钱包)"
-          },
-          "platOrderNo": {
-            "type": "string",
-            "description": "平台订单号"
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32",
-            "description": "状态：0.待处理 1.成功，2.已拒绝,3.已锁定"
-          },
-          "symbol": {
-            "type": "string",
-            "description": "币种"
-          },
-          "toAddress": {
-            "type": "string",
-            "description": "接收地址"
-          },
-          "txId": {
-            "type": "string",
-            "description": "交易ID"
+            "description": "Payment network"
           }
         }
       },
@@ -348,48 +391,108 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "错误码,200表示成功"
+            "description": "Error code, 200 indicates success"
           },
           "data": {
             "type": "array",
-            "description": "业务数据",
+            "description": "Business data",
             "items": {
               "$ref": "#/components/schemas/ApiNetWorkConfigVO"
             }
           },
           "message": {
             "type": "string",
-            "description": "消息"
+            "description": "Message"
           },
           "success": {
             "type": "boolean"
           },
           "trace": {
             "type": "string",
-            "description": "链路ID"
+            "description": "Trace ID"
           }
         }
       },
-      "ResponseDTO«ApiPayoutOrderVO»": {
+      "PayoutOrderApiDTO": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "description": "Order amount"
+          },
+          "bizOrderNo": {
+            "type": "string",
+            "description": "Merchant ID"
+          },
+          "blockTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Blockchain block time"
+          },
+          "contractId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Contract ID"
+          },
+          "custNo": {
+            "type": "string",
+            "description": "Customer number"
+          },
+          "fee": {
+            "type": "number",
+            "description": "Service fee"
+          },
+          "gasAmount": {
+            "type": "number",
+            "description": "Network fee"
+          },
+          "network": {
+            "type": "string",
+            "description": "Network"
+          },
+          "platOrderNo": {
+            "type": "string",
+            "description": "Platform order number"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Status: 0.Pending 1.Success 2.Rejected 3.Locked"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "Currency"
+          },
+          "toAddress": {
+            "type": "string",
+            "description": "Receiving address"
+          },
+          "txId": {
+            "type": "string",
+            "description": "Transaction ID"
+          }
+        }
+      },
+      "ResponseDTO«PayoutOrderApiDTO»": {
         "type": "object",
         "properties": {
           "code": {
             "type": "string",
-            "description": "错误码,200表示成功"
+            "description": "Error code, 200 indicates success"
           },
           "data": {
-            "$ref": "#/components/schemas/ApiPayoutOrderVO"
+            "$ref": "#/components/schemas/PayoutOrderApiDTO"
           },
           "message": {
             "type": "string",
-            "description": "消息"
+            "description": "Message"
           },
           "success": {
             "type": "boolean"
           },
           "trace": {
             "type": "string",
-            "description": "链路ID"
+            "description": "Trace ID"
           }
         }
       },
@@ -398,186 +501,135 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "错误码,200表示成功"
+            "description": "Error code, 200 indicates success"
           },
           "message": {
             "type": "string",
-            "description": "消息"
+            "description": "Message"
           },
           "success": {
             "type": "boolean"
           },
           "trace": {
             "type": "string",
-            "description": "链路ID"
+            "description": "Trace ID"
           }
         }
       },
-      "PayOrderDataDTO": {
-        "type": "object",
-        "properties": {
-          "amount": {
-            "type": "string",
-            "description": "支付数量"
-          },
-          "chainId": {
-            "type": "string",
-            "description": "链ID"
-          },
-          "createTime": {
-            "type": "integer",
-            "format": "int64",
-            "description": "订单提交时间"
-          },
-          "custNo": {
-            "type": "string",
-            "description": "客户ID-支付类型返回"
-          },
-          "fee": {
-            "type": "string",
-            "description": "手续费"
-          },
-          "merchantId": {
-            "type": "integer",
-            "format": "int64",
-            "description": "商户ID"
-          },
-          "network": {
-            "type": "string",
-            "description": "网络"
-          },
-          "orderNo": {
-            "type": "string",
-            "description": "商户订单号-汇款类型返回"
-          },
-          "payAmount": {
-            "type": "string",
-            "description": "支付金额-汇款类型返回"
-          },
-          "paySymbol": {
-            "type": "string",
-            "description": "支付币种-汇款类型返回"
-          },
-          "platOrderNo": {
-            "type": "string",
-            "description": "平台订单号"
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32",
-            "description": "订单状态 -1 失败: 0：处理中  1:成功"
-          },
-          "symbol": {
-            "type": "string",
-            "description": "币种"
-          },
-          "txId": {
-            "type": "string",
-            "description": "链上交易ID"
-          },
-          "type": {
-            "type": "integer",
-            "format": "int32",
-            "description": "类型：1-支付 "
-          },
-          "updateTime": {
-            "type": "integer",
-            "format": "int64",
-            "description": "订单更新时间"
-          },
-          "walletAddress": {
-            "type": "string",
-            "description": "支付钱包地址"
-          }
-        }
-      },
-      "ResponseDTO«List«PayOrderDataDTO»»": {
+      "ResponseDTO«List«PayOrderApiDTO»»": {
         "type": "object",
         "properties": {
           "code": {
             "type": "string",
-            "description": "错误码,200表示成功"
+            "description": "Error code, 200 indicates success"
           },
           "data": {
             "type": "array",
-            "description": "业务数据",
+            "description": "Business data",
             "items": {
-              "$ref": "#/components/schemas/PayOrderDataDTO"
+              "$ref": "#/components/schemas/PayOrderApiDTO"
             }
           },
           "message": {
             "type": "string",
-            "description": "消息"
+            "description": "Message"
           },
           "success": {
             "type": "boolean"
           },
           "trace": {
             "type": "string",
-            "description": "链路ID"
+            "description": "Trace ID"
           }
         }
       },
-      "PayOrderApiSearchDTO": {
+      "PayOrderApiDTO": {
         "type": "object",
         "properties": {
+          "amount": {
+            "type": "number",
+            "description": "Customer payment amount"
+          },
+          "blockTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Cashier ID"
+          },
+          "cashierId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Cashier ID"
+          },
           "chainId": {
             "type": "string",
-            "description": "网络Id"
+            "description": "Chain ID"
+          },
+          "createTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Order submission time"
           },
           "custNo": {
             "type": "string",
-            "description": "客户ID"
-          },
-          "endBlockDate": {
-            "type": "integer",
-            "format": "int64",
-            "description": "区块-结束时间"
-          },
-          "endDate": {
-            "type": "integer",
-            "format": "int64",
-            "description": "订单-结束时间"
+            "description": "Business customer number"
           },
           "fromAddress": {
             "type": "string",
-            "description": "客户支付地址"
+            "description": "Payment wallet address"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Platform order number"
+          },
+          "network": {
+            "type": "string",
+            "description": "Payment network"
           },
           "orderNo": {
             "type": "string",
-            "description": "业务订单编号"
+            "description": "Business merchant order number"
           },
           "orderType": {
             "type": "integer",
             "format": "int32",
-            "description": "支付方式: 1.连钱包  2.扫码转账 3.线下支付"
-          },
-          "startBlockDate": {
-            "type": "integer",
-            "format": "int64",
-            "description": "区块-开始时间"
-          },
-          "startDate": {
-            "type": "integer",
-            "format": "int64",
-            "description": "订单-开始时间"
+            "description": "Type: 1-Wallet connection payment 2-QR code payment"
           },
           "status": {
             "type": "integer",
             "format": "int32",
-            "description": "-3 取消 -2.失败 -1 超时 0.待支付 1.待确认 9.支付成功"
+            "description": "-3 Customer canceled -2.Payment failed -1 Timeout unpaid 0.Pending payment 1.Waiting blockchain confirmation 9.Payment successful"
           },
           "symbol": {
             "type": "string",
-            "description": "币种"
-          },
-          "toAddress": {
-            "type": "string",
-            "description": "到账地址"
+            "description": "Payment currency"
           },
           "txId": {
             "type": "string",
-            "description": "交易Hash"
+            "description": "Blockchain transaction ID"
+          }
+        }
+      },
+      "ResponseDTO«ApiCashierDetailVO»": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code, 200 indicates success"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ApiCashierDetailVO"
+          },
+          "message": {
+            "type": "string",
+            "description": "Message"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "trace": {
+            "type": "string",
+            "description": "Trace ID"
           }
         }
       },
@@ -586,36 +638,31 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "错误码,200表示成功"
+            "description": "Error code, 200 indicates success"
           },
           "data": {
             "type": "array",
-            "description": "业务数据",
+            "description": "Business data",
             "items": {
               "$ref": "#/components/schemas/SymbolConfigVO"
             }
           },
           "message": {
             "type": "string",
-            "description": "消息"
+            "description": "Message"
           },
           "success": {
             "type": "boolean"
           },
           "trace": {
             "type": "string",
-            "description": "链路ID"
+            "description": "Trace ID"
           }
         }
       },
       "SymbolConfigVO": {
         "type": "object",
         "properties": {
-          "bizType": {
-            "type": "integer",
-            "format": "int32",
-            "description": "1-业务收款 2-汇款结算"
-          },
           "chainId": {
             "type": "string",
             "description": "chainId"
@@ -623,15 +670,19 @@
           "decimals": {
             "type": "integer",
             "format": "int32",
-            "description": "小数位"
+            "description": "Decimal places"
+          },
+          "network": {
+            "type": "string",
+            "description": "Network"
           },
           "symbol": {
             "type": "string",
-            "description": "币种Code"
+            "description": "Currency code"
           },
           "tokenAddress": {
             "type": "string",
-            "description": "币种合约地址"
+            "description": "Token contract address"
           }
         }
       }
