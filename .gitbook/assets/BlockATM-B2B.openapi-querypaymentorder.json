@@ -1,0 +1,179 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BlockATM-B2B",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Payment Order Management"
+    }
+  ],
+  "paths": {
+    "/order/api/payorder/list": {
+      "get": {
+        "summary": "Query payment order records-V5.0",
+        "deprecated": false,
+        "description": "",
+        "operationId": "apiOrderUsingGET_1",
+        "tags": [
+          "Payment Order Management"
+        ],
+        "parameters": [
+          {
+            "name": "orderNo",
+            "in": "query",
+            "description": "Business order number",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "chainId",
+            "in": "query",
+            "description": "Network ID",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "custNo",
+            "in": "query",
+            "description": "Customer number",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "description": "Payment currency",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDTO%C2%ABList%C2%ABPayOrderApiDTO%C2%BB%C2%BB"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResponseDTO«List«PayOrderApiDTO»»": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code, 200 indicates success"
+          },
+          "data": {
+            "type": "array",
+            "description": "Business data",
+            "items": {
+              "$ref": "#/components/schemas/PayOrderApiDTO"
+            }
+          },
+          "message": {
+            "type": "string",
+            "description": "Message"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "trace": {
+            "type": "string",
+            "description": "Trace ID"
+          }
+        }
+      },
+      "PayOrderApiDTO": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "description": "Customer payment amount"
+          },
+          "blockTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Cashier ID"
+          },
+          "cashierId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Cashier ID"
+          },
+          "chainId": {
+            "type": "string",
+            "description": "Chain ID"
+          },
+          "createTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Order submission timestamp"
+          },
+          "custNo": {
+            "type": "string",
+            "description": "Business customer number"
+          },
+          "fromAddress": {
+            "type": "string",
+            "description": "Payment wallet address"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Platform order number"
+          },
+          "network": {
+            "type": "string",
+            "description": "Payment network"
+          },
+          "orderNo": {
+            "type": "string",
+            "description": "Business merchant order number"
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Type: 1-Wallet connection payment 2-QR code payment"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "description": "-3 Customer canceled -2 Payment failed -1 Payment timeout 0 Pending payment 1 Awaiting blockchain confirmation 9 Payment successful"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "Payment currency"
+          },
+          "txId": {
+            "type": "string",
+            "description": "Blockchain transaction ID"
+          }
+        }
+      }
+    },
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
