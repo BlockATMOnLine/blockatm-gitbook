@@ -4,7 +4,7 @@ description: Deploy Contracts → Configure Checkout → Complete Integration
 
 # Deposit Service
 
-## Cryptocurrency Payment Contract Setup Guide
+## 1. Deploy Payment Contract Setup Guide
 
 ### Step-by-Step Instructions
 
@@ -28,12 +28,36 @@ description: Deploy Contracts → Configure Checkout → Complete Integration
 * **TRON**: Requires 500+ frozen TRX for bandwidth
 * Contract parameters become immutable after deployment
 
-### Visual Guide
+### Create Payment Checkout Portal
 
-```markup
-graph TD
-    A[1. Select Network] --> B[2. Create Contract]
-    B --> C[3. Enter Parameters]
-    C --> D[4. Sign & Deploy]
+1. **Access Creation Menu**\
+   Navigate to **Checkout** in top menu → Click **Create New Checkout**
+2. **Parameter Configuration**\
+   Fill in the creation form:
+   * `Checkout Name` (Displayed to customers)
+   * `Business Logo` (Recommended 256x256px PNG)
+   * `Network Selection` (Ethereum/BSC/TRON)
+   * `Accepted Cryptocurrencies` (Multi-select supported)
+   * `Payment Methods` (On-chain/Cross-chain)\
+     &#xNAN;_&#x4C;ive preview updates automatically on right panel_
+3. **Finalize Creation**\
+   Click **Confirm** to generate:
+   * Unique checkout URL
+   * Embeddable widget code
+   * API credentials
+
+### Technical Specifications
+
+| Field      | Requirements                         |
+| ---------- | ------------------------------------ |
+| Name       | 3-50 characters                      |
+| Logo       | Max 2MB (Transparent BG recommended) |
+| Networks   | Minimum 1 chain required             |
+| Currencies | Must support at least 1 stablecoin   |
+
+```mermaid
+graph LR
+    A[1. Menu Access] --> B[2. Configure Parameters]
+    B --> C[3. Preview & Confirm]
 ```
 
