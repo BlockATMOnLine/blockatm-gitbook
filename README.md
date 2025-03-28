@@ -34,23 +34,7 @@ Welcome to BlockATM API Documentation! BlockATM offers a set of powerful and fle
 BlockATM is a decentralized payment solution for crypto, aimed at providing a secure, convenient, and trustworthy payment platform. With our use of Web3 technology and smart contracts, we manage every transaction to ensure its authenticity. Our mission is to leverage the benefits of decentralization, such as tamper-proof and trustworthy systems, to ensure the safety of your assets.\
 We believe that trust can be established without the need for verification, and thus, BlockATM aims to make crypto payments more secure and reliable through decentralized solutions.
 
-### Core Service&#x20;
-
-**1. Deposit Service**
-
-* Accept crypto payments from end-users (USDT/DAI/USDC etc.)
-* Multi-chain support: Ethereum, Arbitrum,TRON
-* Instant payment notifications & automatic settlement
-* Smart contracts are fully independently deployed and  100% asset security
-
-
-
-**2. Payout Service**
-
-* Send crypto to external wallets
-* Batch processing (up to 200 addresses per request)
-* Multi-level approval workflows
-* Smart contracts are fully independently deployed and  100% asset security
+###
 
 
 

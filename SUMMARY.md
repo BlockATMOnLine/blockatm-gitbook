@@ -6,8 +6,9 @@
 
 * [About BlockATM](README.md)
 * [Quick Start](quick-start/README.md)
-  * [Payment](quick-start/payment.md)
-  * [Payout](quick-start/payout.md)
+  * [Preparation Checklist](quick-start/preparation-checklist.md)
+  * [Deposit Service](quick-start/deposit-service.md)
+  * [Payout Service](quick-start/payout-service.md)
 
 ## Cashier
 
