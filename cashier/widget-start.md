@@ -1,9 +1,9 @@
 ---
 description: Just three  steps to  complete the integration .
-icon: box-open
+icon: plug
 ---
 
-# Quick Start
+# Widget SDK
 
 ### 1. import
 

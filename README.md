@@ -1,5 +1,5 @@
 ---
-icon: book-open
+icon: cubes
 cover: https://gitbookio.github.io/onboarding-template-images/header.png
 coverY: 0
 layout:
@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# Overview
+# About BlockATM
 
 ### Welcome
 
@@ -34,6 +34,26 @@ Welcome to BlockATM API Documentation! BlockATM offers a set of powerful and fle
 BlockATM is a decentralized payment solution for crypto, aimed at providing a secure, convenient, and trustworthy payment platform. With our use of Web3 technology and smart contracts, we manage every transaction to ensure its authenticity. Our mission is to leverage the benefits of decentralization, such as tamper-proof and trustworthy systems, to ensure the safety of your assets.\
 We believe that trust can be established without the need for verification, and thus, BlockATM aims to make crypto payments more secure and reliable through decentralized solutions.
 
+### Core Service&#x20;
+
+**1. Deposit Service**
+
+* Accept crypto payments from end-users (USDT/DAI/USDC etc.)
+* Multi-chain support: Ethereum, Arbitrum,TRON
+* Instant payment notifications & automatic settlement
+* Smart contracts are fully independently deployed and  100% asset security
+
+
+
+**2. Payout Service**
+
+* Send crypto to external wallets
+* Batch processing (up to 200 addresses per request)
+* Multi-level approval workflows
+* Smart contracts are fully independently deployed and  100% asset security
+
+
+
 ### Our Vision
 
 <figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
@@ -41,6 +61,8 @@ We believe that trust can be established without the need for verification, and 
 \
 At BlockATM, we are committed to leveraging the power of blockchain technology to create a more efficient and transparent payment ecosystem for businesses.\
 Our solutions will enable businesses to seamlessly integrate crypto into their existing payment infrastructure, while also providing robust security features to protect against fraud and hacking.
+
+
 
 ### Key Features
 

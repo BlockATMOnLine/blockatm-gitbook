@@ -1,11 +1,18 @@
 # Table of contents
 
-* [Overview](README.md)
+## Overview
+
+***
+
+* [About BlockATM](README.md)
+* [Quick Start](quick-start/README.md)
+  * [Payment](quick-start/payment.md)
+  * [Payout](quick-start/payout.md)
 
 ## Cashier
 
 * [Overview](integrations/overview.md)
-* [Quick Start](cashier/widget-start.md)
+* [Widget SDK](cashier/widget-start.md)
 * [Url Signing](cashier/can-shu-qian-ming.md)
 * [Widget Param](cashier/widget-param.md)
 
