@@ -2,8 +2,6 @@
 
 ## Overview
 
-***
-
 * [About BlockATM](README.md)
 * [Quick Start](quick-start/README.md)
   * [Preparation Checklist](quick-start/preparation-checklist.md)
