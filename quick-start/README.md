@@ -29,14 +29,19 @@ icon: rocket-launch
 
 &#x20;Before getting started, please ensure you have the following ready:
 
-1. **Web3 Wallets**
+1. Web3 Wallets 
    * For EVM chains : Install MetaMask or equivalent wallet
    * For TRON network: Install **TronLink** wallet
-2.  **Gas Tokens & Service Fees**
+2.  Gas Tokens
+     * Prepare native tokens for gas fees
+       * at least 0.1 ETH for Ethereum Contract Deploy
+       * at least 1000 TRX for Tron Contract Deploy
 
-    1. &#x20;Prepare native tokens for gas fees
+3. Service Fees
+    *  Have at least 200 USDT (mainnet) available for contract deployment service fees
 
-    &#x20;
-
-    1.
-
+4. Essential Addresses
+   Prepare these critical wallet addresses in advance:
+   * Admin Address: For deploy and manage smart contracts 
+   * Finance Address: For fund management (use hardware wallet for security)
+   *  Withdraw Address: Dedicated address for withdrawals (keep separate from other wallets, cold wallet recommended)
