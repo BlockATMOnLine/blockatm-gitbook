@@ -1,5 +1,5 @@
 ---
-description: Deploy Contracts → Configure Cashier→ Complete Integration
+description: Deploy Contracts → Create Cashier→ Embed the Cashier->Process Wehook Event
 ---
 
 # Deposit Service
