@@ -1,5 +1,5 @@
 ---
-description: Deploy Contracts → Create Cashier→ Embed the Cashier->Process Wehook Event
+description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Process Wehook Event
 ---
 
 # Deposit Service
@@ -43,7 +43,7 @@ description: Deploy Contracts → Create Cashier→ Embed the Cashier->Process W
 
 
 
-## Step 3  _Embed_ **the Cashier**
+## Step 3  Integrate **the Cashier**
 
 Integrate our payment **Cashier**  into your application using the **Widget** . For detailed integration steps, please refer to the **Integration Guide**&#x20;
 
