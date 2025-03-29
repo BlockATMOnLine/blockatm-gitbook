@@ -14,9 +14,9 @@ icon: rocket-launch
 * Instant payment notifications & automatic settlement
 * Smart contracts are fully independently deployed and 100% asset security
 
+&#x20;    [Click  to start integration](deposit-service.md#step-1-deploy-payment-contract)
 
 
-[Click  to start integration](deposit-service.md#step-1-deploy-payment-contract)
 
 **2. Payout Service**
 
@@ -25,7 +25,7 @@ icon: rocket-launch
 * Multi-level approval workflows
 * Smart contracts are fully independently deployed and 100% asset security
 
-Click [**"Begin Setup"**](quick-start/payout-service.md) to start integration
+&#x20;     [Click to start integration ](payout-service.md#step-1-deploy-the-payout-contract)
 
 ### Preparation Checklist
 
