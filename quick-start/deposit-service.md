@@ -4,7 +4,7 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 # Deposit Service
 
-## Step 1   Deploy Payment Contract&#x20;
+### Step 1   Deploy Payment Contract&#x20;
 
 
 
@@ -24,7 +24,7 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 
 
-## Step 2  Create Cashier&#x20;
+### Step 2  Create Cashier&#x20;
 
 1. **Access Creation Menu**\
    Navigate to **Cashier** in top menu → Click **Create New Cashier**&#x20;
@@ -43,12 +43,12 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 
 
-## Step 3  Integrate **the Cashier**
+### Step 3  Integrate **the Cashier**
 
 Integrate our payment **Cashier**  into your application using the **Widget** . For detailed integration steps, please refer to the **Integration Guide**&#x20;
 
 
 
-## **Step 4.** _Process Results via Webhook_&#x20;
+### **Step 4.** _Process Results via Webhook_&#x20;
 
 **The final step** is to receive customer payment notifications via **webhook** and process your business logic based on the results. For details, please refer to the **Webhook Guide**.

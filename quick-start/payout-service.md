@@ -1,8 +1,12 @@
+---
+description: Deploy Contracts → Upload Orders→ Submission Orders
+---
+
 # Payout Service
 
 
 
-## Step 1: Deploy the Payout Contract
+### Step 1: Deploy the Payout Contract
 
 The Payout Contract is a prerequisite for enabling disbursement functionality.
 
@@ -20,9 +24,7 @@ The Payout Contract is a prerequisite for enabling disbursement functionality.
 
 
 
-
-
-## Step 2: Upload Payout Orders
+### Step 2: Upload Payout Orders
 
 You may choose one of the following submission methods:
 
@@ -50,11 +52,9 @@ Refer to the API Documentation for specifications
 
 
 
-
-
 ### Step 3: Submission Payout Orders
 
-#### Process Flow
+Process Flow
 
 1. **Authorized treasury personnel** can submit disbursement orders through the admin console
 2. **Balance Verification**:
@@ -78,9 +78,9 @@ Refer to the API Documentation for specifications
 > * Webhook notifications
 > * Dashboard audit logs
 
-
-
 ### Step 4: Webhook Event Processing
 
 **The final step** is to processing Payout Event via **webhook** and process your business logic based on the results. For details, please refer to the **Webhook Guide**.
+
+
 
