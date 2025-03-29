@@ -16,6 +16,9 @@ icon: rocket-launch
 * Instant payment notifications & automatic settlement
 * Smart contracts are fully independently deployed and 100% asset security
 
+Click **"Begin Setup"** to start integration
+[Access Instructions](open-api/openapi/README.md)
+
 **2. Payout Service**
 
 * Send crypto to external wallets
