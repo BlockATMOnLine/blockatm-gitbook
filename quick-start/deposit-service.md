@@ -1,5 +1,5 @@
 ---
-description: Deploy Contracts → Configure Checkout → Complete Integration
+description: Deploy Contracts → Configure Cashier→ Complete Integration
 ---
 
 # Deposit Service
@@ -43,5 +43,12 @@ description: Deploy Contracts → Configure Checkout → Complete Integration
 
 
 
-Step 3.
+## Step 3  _Embed_ **the Cashier**
 
+Integrate our payment **Cashier**  into your application using the **Widget** . For detailed integration steps, please refer to the **Integration Guide**&#x20;
+
+
+
+## **Step 4.** _Process Results via Webhook_&#x20;
+
+**The final step** is to receive customer payment notifications via **webhook** and process your business logic based on the results. For details, please refer to the **Webhook Guide**.
