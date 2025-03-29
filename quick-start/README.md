@@ -14,7 +14,9 @@ icon: rocket-launch
 * Instant payment notifications & automatic settlement
 * Smart contracts are fully independently deployed and 100% asset security
 
-Click \[**"Begin Setup"**] (quick-start/deposit-service.md) to start integration
+
+
+[Click  to start integration](deposit-service.md#step-1-deploy-payment-contract)
 
 **2. Payout Service**
 
