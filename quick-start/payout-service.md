@@ -34,7 +34,9 @@ You may choose one of the following submission methods:
 * Real-time processing upon submission
 * Requires authentication with API keys
 
-Refer to the API Documentation for specifications
+
+
+[Go To API Documentation ](../open-api/payout-data/create-payout-order.md)
 
 
 
@@ -80,7 +82,7 @@ Process Flow
 
 ### Step 4: Webhook Event Processing
 
-**The final step** is to processing Payout Event via **webhook** and process your business logic based on the results. For details, please refer to the **Webhook Guide**.
+**The final step** is to processing Payout Event via **webhook** and process your business logic based on the results. For details, please refer to the [**Webhook Guide**](broken-reference).
 
 
 
