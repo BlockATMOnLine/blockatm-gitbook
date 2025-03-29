@@ -16,8 +16,7 @@ icon: rocket-launch
 * Instant payment notifications & automatic settlement
 * Smart contracts are fully independently deployed and 100% asset security
 
-Click **"Begin Setup"** to start integration
-[Access Instructions](open-api/openapi/README.md)
+Click [**"Begin Setup"** (quick-start/deposit-service.md) to start integration
 
 **2. Payout Service**
 
@@ -26,6 +25,7 @@ Click **"Begin Setup"** to start integration
 * Multi-level approval workflows
 * Smart contracts are fully independently deployed and 100% asset security
 
+Click [**"Begin Setup"** (quick-start/payout-service.md) to start integration
 ### Preparation Checklist
 
 Before getting started, please ensure you have the following ready:
