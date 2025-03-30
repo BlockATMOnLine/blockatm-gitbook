@@ -110,6 +110,79 @@ public class UrlSigner {
 }
 ```
 {% endtab %}
+
+{% tab title="python" %}
+```python
+import hmac
+import hashlib
+from urllib.parse import urlparse, parse_qs, urlencode, quote
+
+def sign_url():
+    # Configuration
+    original_url = "https://cashier.blockatm.com?apiKey=pck_payment_my3T68cbuIXf1x3QOEbWtFEfcJPxeBr8wTewDVM&currencyCode=eth&walletAddress=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae"
+    secret_key = "sck_QOoPSlHDSsgXYeNyTP2i0ug1HKLRjHw9Ug7mCc1Q0"
+
+    # Parse URL and parameters
+    parsed = urlparse(original_url)
+    params = parse_qs(parsed.query, keep_blank_values=True)
+
+    # URL encode parameter values
+    encoded_params = {k: quote(v[0], safe='') for k, v in params.items()}
+
+    # Generate query string
+    query_string = urlencode(encoded_params)
+
+    # Calculate HMAC-SHA256 signature
+    signature = hmac.new(
+        secret_key.encode('utf-8'),
+        query_string.encode('utf-8'),
+        hashlib.sha256
+    ).hexdigest()
+
+    # Construct signed URL
+    signed_url = f"{original_url}&signature={signature}"
+    print("Signed URL:")
+    print(signed_url)
+
+if __name__ == "__main__":
+    sign_url()
+```
+
+
+{% endtab %}
+
+{% tab title="php" %}
+```php
+<?php
+function signUrl() {
+    // Configuration
+    $originalUrl = "https://cashier.blockatm.com?apiKey=pck_payment_my3T68cbuIXf1x3QOEbWtFEfcJPxeBr8wTewDVM&currencyCode=eth&walletAddress=0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae";
+    $secretKey = "sck_QOoPSlHDSsgXYeNyTP2i0ug1HKLRjHw9Ug7mCc1Q0";
+
+    // Parse URL and parameters
+    $parsedUrl = parse_url($originalUrl);
+    parse_str($parsedUrl['query'], $params);
+
+    // URL encode parameter values
+    $encodedParams = array_map('urlencode', $params);
+
+    // Generate query string
+    $queryString = http_build_query($encodedParams);
+
+    // Calculate HMAC-SHA256 signature
+    $signature = hash_hmac('sha256', $queryString, $secretKey);
+
+    // Construct signed URL
+    $signedUrl = $originalUrl . '&signature=' . $signature;
+    echo "Signed URL:\n" . $signedUrl . "\n";
+}
+
+signUrl();
+?>
+```
+
+
+{% endtab %}
 {% endtabs %}
 
 
