@@ -57,97 +57,37 @@ Compute a HMAC with the SHA-256 hash function. Use your account's webhook **Secr
 Compare the signature in the header to the expected signature.
 
 
+## Demo 
+
 ```java
+package com.btm.api.service;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * HMAC-SHA256 Signature Generator
- */
 public class SignatureGenerator {
 
     public static void main(String[] args) {
-        // Test parameters (matches documentation example)
-        Map<String, String> testParams = createTestParams();
-        String requestTime = "1696947336603"; // From BlockATM-Request-Time header
-        String apiKey = "test123";            // Replace with your actual API key
+        // 1. Prepare test parameters
+        Map<String, String> params = createTestParams();
+        String requestTime = "1743060268000"; // From request header
+        String apiKey = "sck_QOoPSlHDSsgXYeNyTP2i0ug1HKLRjHw9Ug7mCc1Q0"; // Replace with actual Secret key
 
-        // Step 1: Build signature payload
-        String signPayload = buildSignPayload(testParams, requestTime);
-        System.out.println("String to be signed:\n" + signPayload + "\n");
+        // 2. Build payload string
+        String payload = buildSignPayload(params, requestTime);
+        System.out.println("[Debug] Payload String:\n" + payload + "\n");
 
-        // Step 2: Calculate HMAC-SHA256 signature
-        String signature = calculateHmacSha256(apiKey, signPayload);
-
-        // Output results for verification
-        System.out.println("Final Signature (Base64): " + signature);
-        System.out.println("Final Signature (HEX)   : " + bytesToHex(decodeBase64(signature)));
-    }
-
-    // ====================== Core Methods ====================== //
-
-    /**
-     * Constructs the signature payload string
-     * @param params Request parameters
-     * @param requestTime Timestamp from header
-     * @return Sorted parameter string with appended timestamp
-     */
-    public static String buildSignPayload(Map<String, String> params, String requestTime) {
-        // TreeMap automatically sorts keys in ASCII order
-        Map<String, String> sortedParams = new TreeMap<>(params);
-
-        StringBuilder payload = new StringBuilder();
-        sortedParams.forEach((key, value) -> {
-            if (payload.length() > 0) payload.append("&");
-            payload.append(key).append("=").append(value);
-        });
-        payload.append("&time=").append(requestTime); // Append timestamp
-
-        return payload.toString();
+        // 3. Generate HEX signature
+        String signature = calculateHmacSha256Hex(apiKey, payload);
+        System.out.println("[Result] Final Signature:\n" + signature);
     }
 
     /**
-     * Calculates HMAC-SHA256 signature
-     * @param secret API key
-     * @param message Payload string
-     * @return Base64-encoded signature
+     * Creates test parameters matching documentation example
      */
-    public static String calculateHmacSha256(String secret, String message) {
-        try {
-            Mac hmac = Mac.getInstance("HmacSHA256");
-            SecretKeySpec keySpec = new SecretKeySpec(
-                secret.getBytes(StandardCharsets.UTF_8), 
-                "HmacSHA256"
-            );
-            hmac.init(keySpec);
-            byte[] hash = hmac.doFinal(message.getBytes(StandardCharsets.UTF_8));
-            return Base64.getEncoder().encodeToString(hash);
-        } catch (Exception e) {
-            throw new RuntimeException("HMAC calculation failed", e);
-        }
-    }
-
-    // ====================== Helper Methods ====================== //
-
-    /** Converts byte array to HEX string (for debugging) */
-    private static String bytesToHex(byte[] bytes) {
-        StringBuilder hex = new StringBuilder();
-        for (byte b : bytes) {
-            hex.append(String.format("%02x", b));
-        }
-        return hex.toString();
-    }
-
-    /** Decodes Base64 string to byte array */
-    private static byte[] decodeBase64(String base64Str) {
-        return Base64.getDecoder().decode(base64Str);
-    }
-
-    /** Creates test parameters matching documentation example */
     private static Map<String, String> createTestParams() {
         Map<String, String> params = new TreeMap<>();
         params.put("amount", "999");
@@ -161,6 +101,68 @@ public class SignatureGenerator {
         params.put("symbol", "USDT");
         params.put("txId", "0x1da59f33aa6f6b435514126e26d5622c3e377e4762579aa0ac0130139625853d");
         return params;
+    }
+
+    /**
+     * Builds the payload string for signing
+     * @param params Request parameters map
+     * @param time Request timestamp from header
+     * @return Sorted parameter string with timestamp appended
+     */
+    private static String buildSignPayload(Map<String, String> params, String time) {
+        StringBuilder payload = new StringBuilder();
+
+        // Sort parameters using TreeMap's natural ordering
+        new TreeMap<>(params).forEach((key, value) -> {
+            if (payload.length() > 0) payload.append("&");
+            payload.append(key).append("=").append(value);
+        });
+
+        // Append timestamp parameter
+        payload.append("&time=").append(time);
+
+        return payload.toString();
+    }
+
+    /**
+     * Calculates HMAC-SHA256 signature in HEX format
+     * @param secret API key
+     * @param message Payload string
+     * @return Hexadecimal signature string
+     */
+    private static String calculateHmacSha256Hex(String secret, String message) {
+        try {
+            // Initialize HMAC-SHA256 algorithm
+            Mac hmac = Mac.getInstance("HmacSHA256");
+            SecretKeySpec keySpec = new SecretKeySpec(
+                    secret.getBytes(StandardCharsets.UTF_8),
+                    "HmacSHA256"
+            );
+
+            // Calculate signature
+            hmac.init(keySpec);
+            byte[] signatureBytes = hmac.doFinal(message.getBytes(StandardCharsets.UTF_8));
+
+            // Convert to HEX string
+            return bytesToHex(signatureBytes);
+        } catch (Exception e) {
+            throw new RuntimeException("HMAC calculation failed", e);
+        }
+    }
+
+    /**
+     * Converts byte array to lowercase HEX string
+     * @param bytes Byte array to convert
+     * @return Hexadecimal representation
+     */
+    private static String bytesToHex(byte[] bytes) {
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : bytes) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) hexString.append('0');
+            hexString.append(hex);
+        }
+        return hexString.toString();
     }
 }
 ```
