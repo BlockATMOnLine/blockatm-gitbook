@@ -30,14 +30,14 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
    Navigate to **Cashier** in top menu → Click **Create New Cashier**&#x20;
 2. **Parameter Configuration**\
    Fill in the creation form:
-   * `Checkout Name` (Displayed to customers)
+   * Cashier `Name` (Displayed to customers)
    * `Business Logo` (Recommended 256x256px PNG)
    * `Network Selection` (Ethereum/TRON)
    * `Accepted Cryptocurrencies` (Multi-select supported)
-   * `Payment Methods` (On-chain/Cross-chain)
+   * `Payment Methods` (On-Wallet/Scan QR )
 3. **Finalize Creation**\
    Click **Confirm** to generate:
-   * Unique checkout URL
+   * Unique cashier URL
    * Embeddable widget code
    * API credentials
 

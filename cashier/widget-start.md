@@ -38,4 +38,4 @@ window.BlockATM.init(dom, {
 #### 3. Signing
 
 If you're using the orderNo or custNo query param, in the payment flows,\
-you need to sign your widget URL before you can display the widget. Learn more about **URL signing**.
+you need to sign your widget URL before you can display the widget. Learn more about [**URL signing**](can-shu-qian-ming.md).
