@@ -4,12 +4,12 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 # Deposit Service
 
-## Step 1   Deploy Payment Contract&#x20;
+### Step 1   Deploy Payment Contract&#x20;
 
 
 
 1. **Network Connection & Authorization**\
-   Select the target blockchain network for wallet connection and complete authorization in your wallet interface.
+   [In BlockATM DAPP](https://backend.blockatm.net/),Select the target blockchain network for wallet connection and complete authorization in your wallet interface.
 2. **Navigate to Contract Creation**\
    Under `Receiving Contract` → `Payment Smart Contract` menu, click **Create New Payment Contract**.
 3. **Contract Configuration**\
@@ -24,9 +24,9 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 
 
-## Step 2  Create Cashier&#x20;
+### Step 2  Create Cashier&#x20;
 
-1. **Access Creation Menu**\
+1. **Access Create Cashier Menu**\
    Navigate to **Cashier** in top menu → Click **Create New Cashier**&#x20;
 2. **Parameter Configuration**\
    Fill in the creation form:
@@ -43,12 +43,12 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 
 
-## Step 3  Integrate **the Cashier**
+### Step 3  Integrate **the Cashier**
 
-Integrate our payment **Cashier**  into your application using the **Widget** . For detailed integration steps, please refer to the **Integration Guide**&#x20;
+Integrate our payment **Cashier**  into your application using the **Widget** . For detailed integration steps, please refer to the [**Integration Guide** ](../cashier/widget-start.md)
 
 
 
-## **Step 4.** _Process Results via Webhook_&#x20;
+### **Step 4.** _Process Results via Webhook_&#x20;
 
-**The final step** is to receive customer payment notifications via **webhook** and process your business logic based on the results. For details, please refer to the **Webhook Guide**.
+**The final step** is to receive customer payment notifications via **webhook** and process your business logic based on the results. For details, please refer to the [**Webhook Guide**](../webhook/PaymentEvent.md).

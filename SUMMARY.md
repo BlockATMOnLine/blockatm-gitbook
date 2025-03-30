@@ -2,7 +2,7 @@
 
 ## Overview
 
-* [About BlockATM](README.md)
+* [About ](README.md)
 * [Quick Start](quick-start/README.md)
   * [Deposit Service](quick-start/deposit-service.md)
   * [Payout Service](quick-start/payout-service.md)

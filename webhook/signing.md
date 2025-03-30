@@ -3,7 +3,7 @@ description: Protecting your sensitive data
 icon: key-skeleton-left-right
 ---
 
-# Request signing
+# Request Signing
 
 ## Checking a Webhook Signature
 
@@ -47,7 +47,7 @@ amount=13.410037&chainId=5&custNo=OrderNO_123456&fee=2&network=TRON&platOrderNo=
 
 ### Step 2
 
-Compute a HMAC with the SHA-256 hash function. Use your account's webhook API key as the key, and use the signed\_payload string as the message in both cases.
+Compute a HMAC with the SHA-256 hash function. Use your account's webhook **Secret Key** as the key, and use the signed\_payload string as the message in both cases.
 
 ```javascript
 // you can get the signature from request header BlockATM-Signature-V1
