@@ -6,10 +6,8 @@ description: Deploy Contracts → Create Cashier→ Integrate the Cashier->Proce
 
 ### Step 1   Deploy Payment Contract&#x20;
 
-
-
-1. **Network Connection & Authorization**\
-   [In BlockATM DAPP](https://backend.blockatm.net/),Select the target blockchain network for wallet connection and complete authorization in your wallet interface.
+1. **Network Connection & Login**\
+   [In BlockATM DAPP](https://backend.blockatm.net/),Select the target blockchain network for wallet connection and complete **Login Message Confirm** in your wallet .
 2. **Navigate to Contract Creation**\
    Under `Receiving Contract` → `Payment Smart Contract` menu, click **Create New Payment Contract**.
 3. **Contract Configuration**\
@@ -49,6 +47,6 @@ Integrate our payment **Cashier**  into your application using the **Widget** . 
 
 
 
-### **Step 4.** _Process Results via Webhook_&#x20;
+### **Step 4.** Process Results via Webhook&#x20;
 
 **The final step** is to receive customer payment notifications via **webhook** and process your business logic based on the results. For details, please refer to the [**Webhook Guide**](../webhook/PaymentEvent.md).
