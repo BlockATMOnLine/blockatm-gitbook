@@ -54,7 +54,8 @@ Dihl6oOt5UkaHo9sEouquP3EqbukLX2dAOoKTSGicYryTvH1m9r6vtSLHGutZn7u34/06gjhdpbXRFPd
 ```
 
 \
-
+\
+**You can refer to different examples based on your development language.**
 
 {% tabs %}
 {% tab title="java" %}
@@ -268,7 +269,7 @@ generateSignature();
 
 {% endtab %}
 
-{% tab title="Untitled" %}
+{% tab title="C++" %}
 ```cpp
 #include <iostream>
 #include <map>
@@ -332,6 +333,70 @@ int main() {
     std::cout << "BlockATM-Request-Time: " << request_time << std::endl;
 
     return 0;
+}
+```
+
+
+{% endtab %}
+
+{% tab title="Go" %}
+```go
+package main
+
+import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/hex"
+	"fmt"
+	"sort"
+	"strings"
+)
+
+func main() {
+	// Configuration
+	apiKey := "pck_payment_my3T68cbuIXf1x3QOEbWtFEfcJPxeBr8wTewDVM"
+	secretKey := "sck_QOoPSlHDSsgXYeNyTP2i0ug1HKLRjHw9Ug7mCc1Q0"
+	requestTime := int64(1743060268000)
+
+	// Sample parameters
+	params := map[string]string{
+		"amount":      "44",
+		"bizOrderNo":  "B234569885XASA953ASDSAD",
+		"chainId":     "11155111",
+		"custNo":      "473_860001",
+		"merchantId":  "286000260",
+		"symbol":      "USDT",
+		"toAddress":   "0xc87dd49427a188bf2b601c1d5cd2aaf36bd553d2",
+		"remark":      "demo for create payout order",
+	}
+
+	// Step 1: Sort keys
+	keys := make([]string, 0, len(params))
+	for k := range params {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+
+	// Build query string
+	var queryParts []string
+	for _, k := range keys {
+		queryParts = append(queryParts, fmt.Sprintf("%s=%s", k, params[k]))
+	}
+	queryString := strings.Join(queryParts, "&")
+
+	// Step 2: Add timestamp
+	payload := fmt.Sprintf("%s&time=%d", queryString, requestTime)
+
+	// Step 3: Compute HMAC
+	h := hmac.New(sha256.New, []byte(secretKey))
+	h.Write([]byte(payload))
+	signature := hex.EncodeToString(h.Sum(nil))
+
+	// Prepare headers
+	fmt.Println("Request Headers:")
+	fmt.Printf("BlockATM-API-Key: %s\n", apiKey)
+	fmt.Printf("BlockATM-Signature-V1: %s\n", signature)
+	fmt.Printf("BlockATM-Request-Time: %d\n", requestTime)
 }
 ```
 
