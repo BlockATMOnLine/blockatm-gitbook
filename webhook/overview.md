@@ -4,15 +4,16 @@ icon: book-open
 
 # Overview
 
-Webhooks are used to receive real-time notifications about asynchronous events in the payment system.\
-When the status of a transaction changes, BlockATM sends an HTTP POST request with event data to the Webhook URL configured in your account.\
+Webhooks are used to receive real-time notifications about asynchronous events in the payment system. When the status of a transaction changes, BlockATM sends an HTTP POST request with event data to the Webhook URL configured in your account.\
 This is particularly useful for handling events not triggered by direct API requests, such as transaction status updates.
 
 ## How Webhooks Work
 
 ### 1. Event Trigger
 
-When a specific event occurs in your account (e.g., payment success, payout triggered), BlockATM sends an HTTP POST request to your Webhook URL.
+When a specific event occurs in your account (e.g., payment success, payout triggered), BlockATM sends an HTTP POST request to your Webhook URL.&#x20;
+
+You can differentiate each webhook event type by the request header "BlockATM-Event". When "**BlockATM-Event**" is set to "**Payment**", it indicates that your payment contract has received a payment. When it is set to "**Payout**", it indicates that your payout contract has triggered a payment.
 
 ### 2. Event Type Identification
 
