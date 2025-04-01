@@ -11,7 +11,7 @@
     }
   ],
   "paths": {
-    "/order/api/payorder/list": {
+    "/order/api/v2/payorder/list": {
       "get": {
         "summary": "Query payment order records-V5.0",
         "deprecated": false,
