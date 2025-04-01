@@ -17,7 +17,7 @@
     }
   ],
   "paths": {
-    "/order/api/payout/detail": {
+    "/order/api/v2/payout/detail": {
       "get": {
         "summary": "Get order details by business order number-V5.0",
         "deprecated": false,
@@ -53,7 +53,7 @@
         "security": []
       }
     },
-    "/order/api/payout/order": {
+    "/order/api/v2/payout/order": {
       "post": {
         "summary": "Create payout order-V5.0",
         "deprecated": false,
@@ -89,7 +89,7 @@
         "security": []
       }
     },
-    "/order/api/payorder/list": {
+    "/order/api/v2/payorder/list": {
       "get": {
         "summary": "Query payment order records-V5.0",
         "deprecated": false,
@@ -152,7 +152,7 @@
         "security": []
       }
     },
-    "/admin/api/pub/allNetworks": {
+    "/admin/api/v2/pub/allNetworks": {
       "get": {
         "summary": "Get all network configurations-V5.0",
         "deprecated": false,
@@ -178,7 +178,7 @@
         "security": []
       }
     },
-    "/admin/api/pub/cashier/info": {
+    "/admin/api/v2/pub/cashier/info": {
       "get": {
         "summary": "Get cashier configuration-V5.0",
         "deprecated": false,
@@ -204,7 +204,7 @@
         "security": []
       }
     },
-    "/admin/api/pub/symbolList": {
+    "/admin/api/v2/pub/symbolList": {
       "get": {
         "summary": "Get currency list-V5.0",
         "deprecated": false,
