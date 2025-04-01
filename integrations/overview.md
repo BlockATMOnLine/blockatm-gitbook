@@ -11,5 +11,5 @@ This provides an enhanced customer experience that can be closely integrated wit
 
 ### todo 增加收银台动图
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 

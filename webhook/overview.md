@@ -4,32 +4,72 @@ icon: book-open
 
 # Overview
 
-Webhooks are used to receive real-time notifications about asynchronous events in the payment system. When the status of a transaction changes, BlockATM sends an HTTP POST request with event data to the Webhook URL configured in your account.\
-This is particularly useful for handling events not triggered by direct API requests, such as transaction status updates.
+Webhooks are necessary for behind-the-scenes transactions. With webhooks you can be notified about asynchronous changes to the status of transaction objects. BlockATM can send webhook events that notify your application anytime an event happens on your account. This is especially useful for events like transaction status updates, that are not triggered by a direct API request.\
+It will be sent via an HTTP POST request to any endpoint URLs that you have defined in your account's Webhooks settings.
 
-## How Webhooks Work
 
-### 1. Event Trigger
 
-When a specific event occurs in your account (e.g., payment success, payout triggered), BlockATM sends an HTTP POST request to your Webhook URL.&#x20;
+### Configuration Requirements
 
-You can differentiate each webhook event type by the request header "BlockATM-Event". When "**BlockATM-Event**" is set to "**Payment**", it indicates that your payment contract has received a payment. When it is set to "**Payout**", it indicates that your payout contract has triggered a payment.
+**Merchant Setup**:
 
-### 2. Event Type Identification
+* Set your webhook URL in Merchant Dashboard
+* Retrieve your signature secret key from Dashboard > Security Settings
 
-Each Webhook request includes a BlockATM-Event header to identify the event type. For example:
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-* Payment: A payment was received by the payment contract.
-* Payout: A payout was triggered by the payout contract.
+**Request Specification**:
 
-### 3.Data Reception
+```http
+POST /your-endpoint HTTP/1.1
+Host: your-server.com
+Content-Type: application/json
+BlockATM-Signature-V2: ab3d...
+BlockATM-Request-Time: 1743060268000
+BlockATM-Event: payment.success
 
-You need to configure an endpoint on your server to receive and process these events, updating your system accordingly.
+{
+  "cust_no": "evt_123456789",
+  "order_no": "ORD202312345",
+  "status": 9,
+  "timestamp": 1743060268000
+  ...
+}
+```
 
-## Secure your Webhook
+### Verification Headers
 
-You may validate incoming requests to ensure they are coming from a trusted source.\
-Visit our webhooks signature for more information. This is a recommended best practice.
+| Header                | Description                                                                             | Example       |
+| --------------------- | --------------------------------------------------------------------------------------- | ------------- |
+| BlockATM-Signature-V2 | HMAC-SHA256 signature of payload. [see detail.](../open-api/openapi/request-signing.md) | c3109d97...   |
+| BlockATM-Request-Time | Unix timestamp (milliseconds)                                                           | 1743060268000 |
+| BlockATM-Event        | Event type identifier                                                                   | payment       |
+
+### Sample Response Handling
+
+```python
+@app.route('/webhook', methods=['POST'])
+def handle_webhook():
+    signature = request.headers.get('BlockATM-Signature-V2')
+    timestamp = request.headers.get('BlockATM-Request-Time')
+    event_type = request.headers.get('BlockATM-Event')
+    
+    # Verify request
+    if not verify_request(signature, timestamp, request.data):
+        return "Invalid request", 401
+    
+    # Process event
+    if event_type == 'payment':
+        handle_payment(request.json)
+    elif event_type == 'payout':
+        handle_payout(request.json)
+        
+    return "OK", 200
+```
+
+
+
+
 
 ## Important Notes
 

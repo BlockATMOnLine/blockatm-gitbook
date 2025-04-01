@@ -18,17 +18,17 @@ layout:
     visible: true
 ---
 
-# About BlockATM
+# About
 
 ### Welcome
 
 Welcome to BlockATM API Documentation! BlockATM offers a set of powerful and flexible APIs that allow developers to integrate seamless cryptocurrency payment services into their applications.
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### About BlockATM
 
-<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 \
 BlockATM is a decentralized payment solution for crypto, aimed at providing a secure, convenient, and trustworthy payment platform. With our use of Web3 technology and smart contracts, we manage every transaction to ensure its authenticity. Our mission is to leverage the benefits of decentralization, such as tamper-proof and trustworthy systems, to ensure the safety of your assets.\
@@ -40,7 +40,7 @@ We believe that trust can be established without the need for verification, and 
 
 ### Our Vision
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 \
 At BlockATM, we are committed to leveraging the power of blockchain technology to create a more efficient and transparent payment ecosystem for businesses.\
