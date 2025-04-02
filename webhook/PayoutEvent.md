@@ -6,6 +6,11 @@ icon: plug-circle-plus
 
 When a payout order is completed, BlockATM will notify you of the payout event via Webhook, allowing you to promptly retrieve the results.
 
+The included statuses are:
+
+* SUCCESS&#x20;
+* REFUSE
+
 The following fields will be returned:
 
 | name                    | comment                                                                                                                                                                                               | example                                    |
@@ -21,7 +26,30 @@ The following fields will be returned:
 | symbol                  | The token identifier that the customer pays with.                                                                                                                                                     | USDT                                       |
 | txId                    | The transaction hash corresponding to the order on the blockchain. You can view the transaction details on the corresponding network's block explorer.                                                | 0x....                                     |
 | type                    | 1：Smart Contract Payment 2.QR Code Payment 3:Smart Contract Address Direct                                                                                                                            | 1                                          |
-| status                  | <p>SUCCESS</p><p>REFUSE</p>                                                                                                                                                                           | 1                                          |
+| status                  | <p>SUCCESS</p><p>REFUSE</p>                                                                                                                                                                           | SUCCESS                                    |
 | createTime              | The time of order creation, measured in milliseconds.                                                                                                                                                 | 1693212861016                              |
 | contractId              | <p>The unique payout contract ID you created in the BlockATM backend.</p><p><br></p>                                                                                                                  | 200910                                     |
 | <p></p><p>blockTime</p> | The time the order was on the blockchain                                                                                                                                                              | 1693212861016                              |
+
+Example:
+
+```json
+{
+​      "custNo": "CustNo_2022140101",
+​      "orderNo": "OrderNo_202504010023",
+​      "id": 8210003616,
+​      "symbol": "USDT",
+​      "amount": "2000.00",
+​      "status": "SUCCESS",
+​      "txId": "0x7614a9840d9422feaef4671e0ee98dd7092ebcba6e41076285f99d0b2b0de5fe",
+​      "network": "Ethereum",
+​      "chainId": "1",
+​      "fromAddress": "0xa9e358e33a57e67c9b84618a52f0194c345c8e35",
+​      "cashierId": 86100021
+​  }
+```
+
+
+
+
+
