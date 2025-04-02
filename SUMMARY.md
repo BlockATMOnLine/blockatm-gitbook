@@ -45,4 +45,5 @@
 * [Obtain Test Coins](resources/obtain-test-coins.md)
 * [Supported Wallet](resources/supported-wallet.md)
 * [Contract Address](resources/contract-address.md)
+* [Migration](resources/migration.md)
 * [FAQ](resources/faq.md)
