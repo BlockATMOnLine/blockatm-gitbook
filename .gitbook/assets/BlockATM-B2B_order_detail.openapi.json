@@ -1,0 +1,151 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BlockATM B2B Payment API",
+    "description": "API for cryptocurrency payment processing in B2B scenarios",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Payment Orders",
+      "description": "Endpoints for payment order management"
+    }
+  ],
+  "paths": {
+    "/order/api/v2/payorder/detail": {
+      "get": {
+        "summary": "Get Payment Order Details",
+        "description": "Retrieve detailed information about a specific payment order",
+        "operationId": "getPaymentOrderDetail",
+        "tags": [
+          "Payment Orders"
+        ],
+        "parameters": [
+          {
+            "name": "orderNo",
+            "in": "query",
+            "description": "Merchant's unique order identifier (business order number)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDTO«PayOrderApiDTO»"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResponseDTO«PayOrderApiDTO»": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Status code (200 indicates success)"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PayOrderApiDTO"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable status message"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Request success flag"
+          },
+          "trace": {
+            "type": "string",
+            "description": "Request trace ID for debugging"
+          }
+        }
+      },
+      "PayOrderApiDTO": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "description": "Payment amount in cryptocurrency",
+            "example": 0.05
+          },
+          "blockTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Blockchain confirmation timestamp (milliseconds since epoch)"
+          },
+          "cashierId": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Cashier terminal ID"
+          },
+          "chainId": {
+            "type": "string",
+            "description": "Blockchain network identifier",
+            "example": "ETH_MAINNET"
+          },
+          "createTime": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Order creation timestamp (milliseconds since epoch)"
+          },
+          "custNo": {
+            "type": "string",
+            "description": "Merchant's customer identifier"
+          },
+          "fromAddress": {
+            "type": "string",
+            "description": "Sender's wallet address",
+            "example": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Platform's internal order ID"
+          },
+          "network": {
+            "type": "string",
+            "description": "Cryptocurrency network name",
+            "example": "Ethereum"
+          },
+          "orderNo": {
+            "type": "string",
+            "description": "Merchant's original order reference"
+          },
+          "orderType": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Payment method type: 1-Wallet Connect 2-QR Code",
+            "enum": [1, 2]
+          },
+          "status": {
+            "type": "string",
+            "description": "Current order status",
+            "enum": ["CANCELLED", "EXPIRED", "WAITING_PAYMENT", "PENDING", "SUCCESS"]
+          },
+          "symbol": {
+            "type": "string",
+            "description": "Cryptocurrency symbol",
+            "example": "ETH"
+          },
+          "txId": {
+            "type": "string",
+            "description": "Blockchain transaction hash",
+            "example": "0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"
+          }
+        }
+      }
+    }
+  }
+}

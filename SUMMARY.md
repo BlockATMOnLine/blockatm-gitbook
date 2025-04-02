@@ -35,6 +35,7 @@
   * [Cashier Info](open-api/public-data/cashier-info.md)
 * [Payment Data](open-api/payment-data/README.md)
   * [Payment Order List](open-api/payment-data/query-payment-order.md)
+  * [Payment Order Detail](open-api/payment-data/payment-order-detail.md)
 * [Payout Data](open-api/payout-data/README.md)
   * [Create Payout Order](open-api/payout-data/create-payout-order.md)
   * [Query Payout Order](open-api/payout-data/query-payout-order.md)
