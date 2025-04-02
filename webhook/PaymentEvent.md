@@ -6,10 +6,10 @@ icon: plug-circle-plus
 
 When changes occur to a payment order, BlockATM will send notifications via the Webhook Payment event. The included statuses are:
 
-* When the payment order has reached the required number of on-chain confirmations.
-* When the payment order has been confirmed as successfully paid.
-* When the customer's order has timed out due to incomplete payment.
-* When the customer cancels the payment order.
+* PENDING: When the payment order has reached the required number of on-chain confirmations.
+* SUCCESS: When the payment order has been confirmed as successfully paid.
+* EXPIRED: When the customer's order has timed out due to incomplete payment.
+* CANCELLED: When the customer cancels the payment order.
 
 BlockATM will send the following fields to your server via the configured Webhook URL:
 
@@ -25,8 +25,7 @@ BlockATM will send the following fields to your server via the configured Webhoo
 | symbol                    | The token identifier that the customer pays with.                                                                                                                                                     | USDT                                       |
 | txId                      | The transaction hash corresponding to the order on the blockchain. You can view the transaction details on the corresponding network's block explorer.                                                | 0x....                                     |
 | orderType                 | 1：Smart Contract Payment 2.QR Code Payment 3:Smart Contract Address Direct                                                                                                                            | 1                                          |
-| status                    | <p>CANCELLED<br>EXPIRED</p><p>PENDING</p><p>SUCCESS</p>                                                                                                                                               | 9                                          |
-| createTime                | The time of order creation, measured in milliseconds.                                                                                                                                                 | 1693212861016                              |
+| status                    | <p><strong>CANCELLED</strong><br>EXPIRED</p><p><strong>PENDING</strong></p><p><strong>SUCCESS</strong></p>                                                                                            | **SUCCESS**                                |
 | <p></p><p>fromAddress</p> | <p>The address used to pay for this order (empty if unpaid).</p><p><br></p>                                                                                                                           | 0xa9e358E33a57E67c9B84618a52f0194C345C8e35 |
 | <p></p><p>blockTime</p>   | The time the order was on the blockchain                                                                                                                                                              | 1693212861016                              |
 
@@ -47,7 +46,7 @@ Example:
 
 ​      "amount": "2000.00",
 
-​      "status": 9,
+​      "status": "SUCCESS",
 
 ​      "txId": "0x7614a9840d9422feaef4671e0ee98dd7092ebcba6e41076285f99d0b2b0de5fe",
 
