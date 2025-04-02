@@ -4,7 +4,7 @@ icon: arrows-to-circle
 
 # Migration
 
-## 新版版本升级指南（V2）
+## 字段字段新版版本升级指南（V2）
 
 **目标**：帮助商户快速定位改动点，减少接入成本。
 
@@ -18,9 +18,11 @@ icon: arrows-to-circle
 
 ***
 
-### 附录：字段变更对照（Webhook示例）
+### 附录：字段变更对照（Webhook 收款）
 
-| 旧字段      | 新字段         | 类型     | 说明          |
-| -------- | ----------- | ------ | ----------- |
-| `status` | `tx_status` | string | 新增交易状态细分枚举值 |
-| -        | `chain_id`  | string | 新增区块链网络标识   |
+| 旧字段         | 新字段       | 类型     | 说明                                                                 |
+| ----------- | --------- | ------ | ------------------------------------------------------------------ |
+| platOrderNo | `id`      | long   | BlockATM唯一订单标识                                                     |
+| type        | orderType | int    | 收款订单类型                                                             |
+| status      | status    | String | <p>由数字变更为字符串：<br>CANCELLED EXPIRED</p><p>PENDING</p><p>SUCCESS</p> |
+| -           | blockTime | long   | 新增字段，返回交易所在区块链上创建时间                                                |
