@@ -30,3 +30,35 @@ BlockATM will send the following fields to your server via the configured Webhoo
 | <p></p><p>fromAddress</p> | <p>The address used to pay for this order (empty if unpaid).</p><p><br></p>                                                                                                                           | 0xa9e358E33a57E67c9B84618a52f0194C345C8e35 |
 | <p></p><p>blockTime</p>   | The time the order was on the blockchain                                                                                                                                                              | 1693212861016                              |
 
+Example:
+
+
+
+```json
+{
+
+​      "custNo": "CustNo_00240101",
+
+​      "orderNo": "OrderNo_202504010023",
+
+​      "id": 8210003616,
+
+​      "symbol": "USDT",
+
+​      "amount": "2000.00",
+
+​      "status": 9,
+
+​      "txId": "0x7614a9840d9422feaef4671e0ee98dd7092ebcba6e41076285f99d0b2b0de5fe",
+
+​      "network": "Ethereum",
+
+​      "chainId": "1",
+
+​      "fromAddress": "0xa9e358e33a57e67c9b84618a52f0194c345c8e35",
+
+​      "cashierId": 86100021
+
+​}
+```
+
