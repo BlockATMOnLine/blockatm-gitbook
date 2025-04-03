@@ -1,14 +1,11 @@
 ---
+description: 新版版本升级指南（V2）
 icon: arrows-to-circle
 ---
 
 # Migration
 
-## 新版版本升级指南（V2）
-
 **目标**：帮助商户快速定位改动点，减少接入成本。
-
-
 
 
 
