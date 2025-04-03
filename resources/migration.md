@@ -13,11 +13,15 @@ icon: arrows-to-circle
 
 
 
-<table><thead><tr><th width="105.78790283203125">功能模块</th><th>旧版本</th><th>新版本</th><th>商户应对措施</th></tr></thead><tbody><tr><td><strong>连钱包支付</strong></td><td>通过widget 接入收银台<br>1. 客户编号custno 选填<br>2. URL参数签名选填（签名方式为ECDSA）</td><td><br>通过widget接入收银台<br>1. <code>custno</code> 字段改为必填<br>2. URL参数签名从可选调整为强制（使用HMAC-SHA256）<br></td><td>1.<a href="../quick-start/deposit-service.md">充值接入流程</a><br>1. 检查代码是否传递custNo<br>2. 集成签名逻辑（参考<br><a href="../cashier/can-shu-qian-ming.md">签名文档</a>下方签名方式变更附录二）</td></tr><tr><td><strong>二维码支付</strong></td><td>通过api创建订单，并且返回收银台地址</td><td>通过widget方式接入收银台</td><td>1. 移除原有API调用，参考新的<a href="../quick-start/deposit-service.md">充值接入流程</a><br>2. 集成新Widget（参考<br><a href="../cashier/widget-start.md">Widget集成指南</a>）<br></td></tr><tr><td><strong>付款功能</strong></td><td>1.在商户端上传付款订单</td><td><ol><li>保留在商户端上传付</li><li>增加通过api创建付款订单 </li></ol></td><td><ol><li>选择通过<a href="../open-api/payout-data/create-payout-order.md">创建付款订单API</a>接入<br></li></ol></td></tr><tr><td><strong>Webhook</strong></td><td><p></p><ol><li>签名算法为ECDSA<br></li><li>订单状态status为int</li></ol><p></p></td><td><ol><li>签名算法调整为<br>HMAC-SHA256</li><li>订单状态status 为String </li></ol></td><td><p>签名字符串逻辑未变更 </p><p>1.更新验签逻辑 （参考<a href="../webhook/signing.md">签名文档</a>）<br>2. 适配新字段（<br>具体见下方 附录一）</p></td></tr><tr><td><strong>API接口</strong></td><td>路径为/api/v1</td><td><br>路径升级为/api/v2<br></td><td>详情见 附录三 api 变更</td></tr><tr><td></td><td>获取支持的网络</td><td>由原路径：/api/v1/public/networklist<br>新版本路径：/api/v2/pub/allNetworks<br></td><td>如果商户在进入收银台前获取了支持的网络，请进行更新</td></tr><tr><td></td><td>获取支持的币种</td><td>由原路径：api/v1/public/cryptocurrencies<br>新版本路径：/api/v2/pub/symbolList<br></td><td>如果商户在进入收银台前获取了支持的币种，请进行更新</td></tr><tr><td></td><td>获取收款合约地址</td><td>原接口：/api/v1/contract/payment<br>新接口：/api/v2/pub/cashier/info<br></td><td>原独立获取收款地址，变更为通过收银台获取配置的合约地址信息</td></tr><tr><td></td><td>查询收款订单</td><td>原接口：<br>/api/v1/payment/qrCodePayment<br>/api/v1/payment/contractPayment<br>新接口：/order/api/v2/payorder/detail<br><br><br></td><td>如果商户主动查询了收款订单状态，请变更新的api接口</td></tr><tr><td></td><td>查询付款订单</td><td>原接口：<br>/api/v1/payout/get<br>新接口：<br>/api/v2/payout/detail<br></td><td>如果商户主动查询了付款订单状态，请变更新的api接口</td></tr></tbody></table>
 
 
-
-
+| 功能模块       | 旧版本                                                                 | 新版本                                                                 | 商户应对措施                                                                 |
+|----------------|----------------------------------------------------------------------|----------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **连钱包支付** | 通过widget 接入收银台<br>1. 客户编号custno 选填<br>2. URL参数签名选填（签名方式为ECDSA） | 通过widget接入收银台<br>1. `custno` 字段改为必填<br>2. URL参数签名从可选调整为强制（使用HMAC-SHA256） | 1.[充值接入流程](../quick-start/deposit-service.md)<br>1. 检查代码是否传递custNo<br>2. 集成签名逻辑（参考[签名文档](../cashier/can-shu-qian-ming.md)下方签名方式变更附录二） |
+| **二维码支付** | 通过api创建订单，并且返回收银台地址                                   | 通过widget方式接入收银台                                             | 1. 移除原有API调用，参考新的[充值接入流程](../quick-start/deposit-service.md)<br>2. 集成新Widget（参考[Widget集成指南](../cashier/widget-start.md)） |
+| **付款功能**   | 1.在商户端上传付款订单                                                | 1. 保留在商户端上传付<br>2. 增加通过api创建付款订单                  | 1. 选择通过[创建付款订单API](../open-api/payout-data/create-payout-order.md)接入 |
+| **Webhook**    | 1. 签名算法为ECDSA<br>2. 订单状态status为int                          | 1. 签名算法调整为HMAC-SHA256<br>2. 订单状态status 为String           | 签名字符串逻辑未变更<br>1.更新验签逻辑（参考[签名文档](../webhook/signing.md)）<br>2. 适配新字段（具体见下方 附录一） |
+| **API接口**    | 路径为/api/v1                                                        | 路径升级为/api/v2                                                   | 详情见 附录三 api 变更                                                      |
 
 ***
 
@@ -48,15 +52,13 @@ icon: arrows-to-circle
 
 
 ### 附录三 API 变更对照表
-
-|   |   |   |
-| - | - | - |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-
-
-
+| API功能           | 旧版本路径/接口                                   | 新版本路径/接口                                   | 调整点                           |
+|-------------------|------------------------------------------------|------------------------------------------------|-------------------------------|
+| 获取支持的网络    | `/api/v1/public/networklist`                   | `/api/v2/pub/allNetworks`                      | 如果商户在进入收银台前获取了支持的网络，请进行更新     |
+| 获取支持的币种    | `/api/v1/public/cryptocurrencies`              | `/api/v2/pub/symbolList`                       | 如果商户在进入收银台前获取了支持的币种，请进行更新     |
+| 获取收款合约地址  | `/api/v1/contract/payment`                     | `/api/v2/pub/cashier/info`                     | 原独立获取收款地址，变更为通过收银台获取配置的合约地址信息 |
+| 查询收款订单      | `/api/v1/payment/qrCodePayment`<br>`/api/v1/payment/contractPayment` | `/order/api/v2/payorder/detail`                | 如果商户主动查询了收款订单状态，请变更新的API接口    |
+| 查询付款订单      | `/api/v1/payout/get`                           | `/api/v2/payout/detail`                        | 如果商户主动查询了付款订单状态，请变更新的API接口    |
 
 
 
