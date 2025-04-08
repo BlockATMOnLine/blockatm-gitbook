@@ -50,9 +50,9 @@ blockatm-event: payment.success
 ```python
 @app.route('/webhook', methods=['POST'])
 def handle_webhook():
-    signature = request.headers.get('blockatm-signature-v2')
-    timestamp = request.headers.get('blockatm-request-time')
-    event_type = request.headers.get('blockatm-event')
+    signature = request.headers.get('BlockATM-Signature-V2')
+    timestamp = request.headers.get('BlockATM-Request-Time')
+    event_type = request.headers.get('BlockATM-Event')
     
     # Verify request
     if not verify_request(signature, timestamp, request.data):
