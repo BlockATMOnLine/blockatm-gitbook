@@ -24,9 +24,9 @@ It will be sent via an HTTP POST request to any endpoint URLs that you have defi
 POST /your-endpoint HTTP/1.1
 Host: your-server.com
 Content-Type: application/json
-BlockATM-Signature-V2: ab3d...
-BlockATM-Request-Time: 1743060268000
-BlockATM-Event: payment.success
+blockatm-signature-v2: ab3d...
+blockatm-request-time: 1743060268000
+blockatm-event: payment.success
 
 {
   "cust_no": "evt_123456789",
@@ -50,9 +50,9 @@ BlockATM-Event: payment.success
 ```python
 @app.route('/webhook', methods=['POST'])
 def handle_webhook():
-    signature = request.headers.get('BlockATM-Signature-V2')
-    timestamp = request.headers.get('BlockATM-Request-Time')
-    event_type = request.headers.get('BlockATM-Event')
+    signature = request.headers.get('blockatm-signature-v2')
+    timestamp = request.headers.get('blockatm-request-time')
+    event_type = request.headers.get('blockatm-event')
     
     # Verify request
     if not verify_request(signature, timestamp, request.data):
