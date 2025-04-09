@@ -24,9 +24,9 @@ It will be sent via an HTTP POST request to any endpoint URLs that you have defi
 POST /your-endpoint HTTP/1.1
 Host: your-server.com
 Content-Type: application/json
-blockatm-signature-v2: ab3d...
-blockatm-request-time: 1743060268000
-blockatm-event: payment.success
+BlockATM-Signature-V2: ab3d...
+BlockATM-Request-Time: 1743060268000
+BlockATM-Event: payment.success
 
 {
   "cust_no": "evt_123456789",
