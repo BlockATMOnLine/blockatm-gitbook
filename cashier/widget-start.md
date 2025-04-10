@@ -19,29 +19,58 @@ Once you've included this script, you're ready to initialize the Web SDK and sta
 
 ### 2.Signing&#x20;
 
-```
-// Some code
+You need to sign your widget URL before you can display the widget. Learn more about [**URL signing**](can-shu-qian-ming.md).
+
+```javascript
+
+// 1. Prepare payment parameters
+const options = {
+  custNo: 'CUST123456',          // Customer ID (required)
+  orderNo: '473_800000001',      // Order number 
+  lang: 'en-US',                 // Language (optional, default: en-US, supports zh-CN/zh-HK/en-US)
+  chainId: 1,                    // Blockchain network ID (optional, 1=ETH Mainnet)
+  currency: 'USDT',              // Cryptocurrency type (optional, e.g. USDT)
+  amount: 100.5,                 // Payment amount (optional)
+};
+
+// 2. Generate signature parameters
+const { urlForSignature } = window.BlockATM.generateUrlForSigning({ 
+  ...options, 
+  apiKey: 'YOUR_API_KEY'         // Replace with your API key
+});
+
+// 3. Get signature from backend
+const { signature } = await fetch("/sign-url", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ urlForSignature }),
+}).then(res => res.json());
 ```
 
-### 2. Initialize
+[See full parameters](widget-param.md)
+
+### 3. Initialize
 
 Initialize the SDK in your application with the flow, variant,lang and any parameters related to deposit cryptocurrency.
 
 ```javascript
-window.BlockATM.init(dom, {
-    custNo: '86000123',
-    lang: 'en-US',
-    orderNo: "D20250030032"
-    callback: ({type})=>{
-        if(type==='cancel'){
-            // Here is the logic to cancel the payment
-        }else if(type==='finish'){
-            // Here is the logic to complete the payment
-        }
+// Initialize payment gateway
+window.BlockATM.init(
+  document.getElementById('blockatm-container'), // Container element
+  {
+    ...options,
+    signature,                                  // Signature from backend
+    callback: ({ type }) => {                   // Payment result callback
+      switch(type) {
+        case 'cancel': 
+          // Handle payment cancellation
+          break;
+        case 'finish': 
+          // Handle successful payment
+          break;
+      }
     }
-})
+  }
+);
 ```
 
-#### 3. Signing
-
-You need to sign your widget URL before you can display the widget. Learn more about [**URL signing**](can-shu-qian-ming.md).
