@@ -54,7 +54,7 @@ const { signature } = await fetch("/sign-url", {
 Initialize the SDK in your application with the flow, variant,lang and any parameters related to deposit cryptocurrency.
 
 ```javascript
-// Initialize payment gateway
+// Initialize and show cashier.
 window.BlockATM.init(
   document.getElementById('blockatm-container'), // Container element
   {
