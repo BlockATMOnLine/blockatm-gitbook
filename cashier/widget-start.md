@@ -9,9 +9,19 @@ icon: plug
 
 Add the SDK as a script to your HTML file.
 
-```javascript
+{% tabs %}
+{% tab title="PRD" %}
+```
 <script src="https://cashier.blockatm.net/libs/v2/BlockATM.umd.js?apiKey=[API_KEY]"></script>
 ```
+{% endtab %}
+
+{% tab title="TEST" %}
+```
+<script src="https://cashier-b2b-pre.ufcfan.org/libs/v2/BlockATM.umd.js?apiKey=[API_KEY]"></script>
+```
+{% endtab %}
+{% endtabs %}
 
 Once you've included this script, you're ready to initialize the Web SDK and start integrating with our suite of cryptocurrency payment solutions.
 
