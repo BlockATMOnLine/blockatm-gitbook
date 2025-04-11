@@ -10,13 +10,13 @@ icon: plug
 Add the SDK as a script to your HTML file.
 
 {% tabs %}
-{% tab title="PRD" %}
+{% tab title="Prod " %}
 ```
 <script src="https://cashier.blockatm.net/libs/v2/BlockATM.umd.js?apiKey=[API_KEY]"></script>
 ```
 {% endtab %}
 
-{% tab title="TEST" %}
+{% tab title="Sandbox " %}
 ```
 <script src="https://cashier-b2b-pre.ufcfan.org/libs/v2/BlockATM.umd.js?apiKey=[API_KEY]"></script>
 ```
