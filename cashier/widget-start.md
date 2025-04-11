@@ -10,7 +10,7 @@ icon: plug
 Add the SDK as a script to your HTML file.
 
 ```javascript
-<script src="https://cashier.blockatm.net/libs/BlockATM.umd.js?apiKey=[API_KEY]"></script>
+<script src="https://cashier.blockatm.net/libs/v2/BlockATM.umd.js?apiKey=[API_KEY]"></script>
 ```
 
 Once you've included this script, you're ready to initialize the Web SDK and start integrating with our suite of cryptocurrency payment solutions.
